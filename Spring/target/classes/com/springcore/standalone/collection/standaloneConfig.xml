@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans.xsd 
+                        http://www.springframework.org/schema/context 
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/util 
+                        http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!-- Standalone Collection type -->
+
+	<!-- Linked list-->
+	<util:list list-class="java.util.LinkedList" id="myfriends">
+		<value>Soma</value>
+		<value>Sunil</value>
+		<value>Rekha</value>
+
+	</util:list>
+	
+	<!-- Tree Map -->
+	<util:map map-class="java.util.TreeMap" id="coursesMap">
+	<entry key="java" value="4"/>
+	<entry key="spring" value="5"/>
+	<entry key="hibernate" value="6"/>
+	</util:map>
+	
+
+	<bean
+		class="com.springcore.standalone.collection.CollectionStandalone"
+		name="standalone">
+		<property name="friends" ref="myfriends" />
+		<property name="courses" ref="coursesMap"/>
+
+	</bean>
+	<bean
+		class="com.springcore.standalone.collection.CollectionStandalone"
+		name="standalone1">
+		<property name="friends" ref="myfriends" />
+
+	</bean>
+
+</beans>
